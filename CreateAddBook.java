@@ -162,4 +162,25 @@ public void viewPersonByState(String state) {
 			System.out.println(contact.get(i));
 		}
 	}
+public int countPersonsByState(String state) {
+		int count= 0;
+		List<AddressBook> list = contact.stream().filter(contactName -> contactName.getState().equals(state))
+				.collect(Collectors.toList());
+		for (AddressBook contact : list) {
+			System.out.println("Name: " + contact.getFirstName()+ "  " + contact.getLastName());
+			count ++;
+		}
+		return count;
+	}
+
+	public int countPersonsByCity(String city) {
+		int count = 0 ;
+		List<AddressBook> list = contact.stream().filter(contactName -> contactName.getCity().equals(city))
+				.collect(Collectors.toList());
+		for (AddressBook contact : list) {
+			System.out.println("Name: " + contact.getFirstName()+ "  " + contact.getLastName());
+			count +=1;
+		}
+		return count;
+	}
 }
