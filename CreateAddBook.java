@@ -183,4 +183,10 @@ public int countPersonsByState(String state) {
 		}
 		return count;
 	}
+	public void sortByFirstName() {
+		List<AddressBook>  sortedList = (ArrayList<AddressBook>) contact.stream().sorted((type1, type2) -> (type1.getFirstName().compareTo(type2.getFirstName()))).collect(Collectors.toList());
+		for (AddressBook contact : sortedList) {
+			System.out.println("Name: " + contact.getFirstName()+ "  " + contact.getLastName());
+		}
+	}
 }
