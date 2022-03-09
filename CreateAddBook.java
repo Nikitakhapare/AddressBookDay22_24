@@ -1,6 +1,7 @@
 package Bridgelabz.AddressBookDay22_24;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 public class CreateAddBook {
 	private String firstName, lastName, address, city, state, email;
@@ -136,6 +137,23 @@ public class CreateAddBook {
 				.collect(Collectors.toList());
 		for (AddressBook contact : list) {
 			System.out.println("First Name: " + contact.getFirstName()+ "  " + contact.getLastName());
+		}
+	}
+public void viewPersonByState(String state) {
+		List<AddressBook> list = contact.stream().filter(contactName -> contactName.getState().equals(state))
+				.collect(Collectors.toList());
+		for (AddressBook contact : list) {
+			System.out.println("Name: " + contact.getFirstName() +" "+ contact.getLastName());
+			System.out.println("State: " + state);
+		}
+	}
+
+	public void viewPersonByCity(String city2) {
+		List<AddressBook> list = contact.stream().filter(contactName -> contactName.getCity().equals(city))
+				.collect(Collectors.toList());
+		for (AddressBook contact : list) {
+			System.out.println("First Name: " + contact.getFirstName()+ "  " + contact.getLastName());
+			System.out.println("City: " + city);
 		}
 	}
 	public void DisplayContacts() {
