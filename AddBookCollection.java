@@ -21,6 +21,7 @@ public class AddBookCollection {
 			System.out.println("8.View by City");
 			System.out.println("9.Count person by city");
 			System.out.println("10.Count person  by State");
+			System.out.println("11.Sort entries by firstName");
 			ch= sc.nextInt();
 			String state;
 			String city;
@@ -72,6 +73,9 @@ public class AddBookCollection {
 				state = sc.next();
 				count = detail.countPersonsByState(state);
 				System.out.println("Number of persons by state "+state+" is "+count);
+				break;
+			case 11:
+			    detail.sortByFirstName();
 				break;
 			}System.out.println("Do you want to continue? if yes press 1");
 			choice = sc.nextInt();
